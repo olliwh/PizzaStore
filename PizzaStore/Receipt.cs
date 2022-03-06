@@ -32,7 +32,8 @@ namespace PizzaStore
         #region Properties
 
         public double TotalPrice { get { return _totalPrice; } }
-
+        public int Delivery { get { return _deliveryFee; } set { _deliveryFee = value; } }
+        public double Tax { get { return _tax; } set { _tax = value; } }
         //store earning is sent to store, to print daily earnings
         public static double DailyEarnings { get { return _dailyEarnings; } set { _dailyEarnings = value; } }
         #endregion
