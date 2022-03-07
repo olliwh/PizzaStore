@@ -78,6 +78,7 @@ namespace PizzaStore
         private void CalculateTotalPrice()
         {
             string delivery = string.Empty;
+
             if (_delivery)
             {
                 _totalPrice = _priceOfItems * (_tax + 1) + _deliveryFee;
@@ -92,9 +93,13 @@ namespace PizzaStore
 
         private void PrintTotal(string delivery)
         {
-            Console.WriteLine($"Your total with tax{delivery}: {_totalPrice:C}");
+            
             Console.WriteLine($"sub-total:  {_priceOfItems:C}");
-            Console.WriteLine($"Tax({_tax * 100}%): {_priceOfItems * (_tax + 1):C}");;
+            Console.WriteLine($"Tax({_tax * 100}%): {_priceOfItems * (_tax):C}");
+
+            //if customer wants delivery it will say so on receit
+            if (delivery != string.Empty) Console.WriteLine($"Delivery {_deliveryFee:C}");
+            Console.WriteLine($"Your total with tax{delivery}: {_totalPrice:C}");
             Console.WriteLine(_dayOfOrder);
             Console.WriteLine();
             Console.WriteLine();
